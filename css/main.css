@@ -1,0 +1,511 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Geomanist';
+  src: url('../ttf/Geomanist-Black.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Bebas+Neue&family=Caveat&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 0;
+}
+:root {
+  font-size: 16px;
+  font-family: 'Baloo 2', cursive;
+  color: lightgray;
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/Fondo.jpg');
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    'hd'
+    'mn'
+    'ft';
+}
+i {
+  font-family: fontawesome !important;
+}
+b {
+  font-family: 'Geomanist', sans-serif;
+}
+::-webkit-scrollbar {
+  height: 0.5rem; /* height of horizontal scrollbar ← You're missing this */
+  width: 0.5rem; /* width of vertical scrollbar */
+  border: 0.1rem solid #d5d5d5;
+}
+::-webkit-scrollbar-thumb:horizontal,
+::-webkit-scrollbar-thumb:vertical {
+  background: #494747;
+  border-radius: 10px;
+}
+/**************/
+/** HEADER ***/
+/*************/
+header {
+  top: 0;
+  height: 5rem;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(73, 72, 72, 1) 100%
+  );
+  position: sticky;
+  z-index: 1;
+  grid-area: hd;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: '... icon menu';
+  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+}
+header > img[alt='Logo de MEGÓC'],
+header > nav {
+  display: none;
+}
+header > img[alt='Letras MEGÓC'] {
+  width: 7rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  grid-area: icon;
+  justify-self: center;
+}
+header > div#menu_hamburguesa {
+  grid-area: menu;
+  align-self: center;
+  justify-self: end;
+  margin-right: 1rem;
+}
+header > div#redes_sociales {
+  display: none;
+}
+header > div > i {
+  margin-left: 1rem;
+  font-size: 1.4rem !important;
+  font-style: normal;
+  cursor: pointer;
+}
+main {
+  display: grid;
+  grid-area: mn;
+  grid-template-areas:
+    'carru'
+    'audi'
+    'canta';
+}
+main h2 {
+  font-family: 'Geomanist';
+  text-align: center;
+  font-size: 2.3rem;
+  margin: 2.3rem 2.5rem 2.5rem 2.5rem;
+  color: white;
+  border-bottom: 0.1rem solid currentColor;
+  text-shadow: 8px 5px 0px rgb(49, 47, 47);
+}
+main > section#audiciones {
+  grid-area: audi;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+main > section#audiciones > div {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: 'icon text';
+  margin-bottom: 3rem;
+}
+#inscribir {
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgb(255, 255, 255);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Geomanist', sans-serif;
+  font-weight: 300;
+  color: white;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  box-shadow: 7px 7px 28px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 7px 28px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 7px 28px 0px rgba(0, 0, 0, 0.75);
+  text-align: center;
+  transition: all 0.2s;
+  background: none;
+}
+#inscribir:hover {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  text-decoration: underline;
+  cursor: pointer;
+}
+div#slider {
+  overflow: hidden;
+  box-shadow: 0px 17px 23px 3px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 17px 23px 3px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 17px 23px 3px rgba(0, 0, 0, 0.67);
+}
+div#slider figure img {
+  width: 20%;
+  max-height: 55rem;
+  float: left;
+}
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  height: fit-content;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite;
+}
+main > section#audiciones > div > img {
+  grid-area: icon;
+  align-self: center;
+  justify-self: flex-end;
+  width: 100%;
+  max-width: 18rem;
+  margin-right: 2rem;
+}
+main > section#audiciones > div > div {
+  padding-top: 3rem;
+  grid-area: text;
+  margin-right: 2rem;
+}
+main > section#cantantes_pc {
+  display: none;
+}
+main > section#cantantes_movil {
+  grid-area: canta;
+  margin-bottom: 13rem;
+}
+main > section#cantantes_movil > section#slider > [type='radio'] {
+  display: none;
+}
+main > section#cantantes_movil > section#slider {
+  height: 35vw;
+  position: relative;
+  perspective: 62.5rem;
+  transform-style: preserve-3d;
+}
+main > section#cantantes_movil > section#slider label {
+  margin: auto;
+  width: 70%;
+  height: 100%;
+  border-radius: 0.25rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  margin-bottom: 2rem;
+}
+#s1:checked ~ #slide4,
+#s2:checked ~ #slide5,
+#s3:checked ~ #slide1,
+#s4:checked ~ #slide2,
+#s5:checked ~ #slide3 {
+  box-shadow: 0 0.06rem 0.25rem 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(-30%, 0, -12.5rem);
+}
+#s1:checked ~ #slide5,
+#s2:checked ~ #slide1,
+#s3:checked ~ #slide2,
+#s4:checked ~ #slide3,
+#s5:checked ~ #slide4 {
+  box-shadow: 0 0.35rem 0.63rem 0 rgba(0, 0, 0, 0.3),
+    0 0.06rem 0.06rem rgb(0, 0, 0, 0.2);
+  transform: translate3d(-15%, 0, -6.25rem);
+}
+#s1:checked ~ #slide1,
+#s2:checked ~ #slide2,
+#s3:checked ~ #slide3,
+#s4:checked ~ #slide4,
+#s5:checked ~ #slide5 {
+  box-shadow: 0 0.63rem 1.55rem 0 rgba(0, 0, 0, 0.3),
+    0 0.69rem 0.45rem 0 rgb(0, 0, 0, 0.19);
+  transform: translate3d(0, 0, 0);
+}
+#s1:checked ~ #slide2,
+#s2:checked ~ #slide3,
+#s3:checked ~ #slide4,
+#s4:checked ~ #slide5,
+#s5:checked ~ #slide1 {
+  box-shadow: 0 0.35rem 0.65rem 0 rgba(0, 0, 0, 0.3),
+    0 0.1rem 0.1rem 0 rgb(0, 0, 0, 0.2);
+  transform: translate3d(15%, 0, -6.25rem);
+}
+#s1:checked ~ #slide3,
+#s2:checked ~ #slide4,
+#s3:checked ~ #slide5,
+#s4:checked ~ #slide1,
+#s5:checked ~ #slide2 {
+  box-shadow: 0 0.05rem 0.25rem 0 rgba(0, 0, 0, 0.37);
+  transform: translate3d(30%, 0, -12.5rem);
+}
+
+footer {
+  grid-area: ft;
+  bottom: 0;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(73, 72, 72, 1) 100%
+  );
+  display: grid;
+  position: fixed;
+  box-shadow: 7px -8px 16px 3px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 7px -8px 16px 3px rgba(0, 0, 0, 0.67);
+  box-shadow: 7px -8px 16px 3px rgba(0, 0, 0, 0.67);
+}
+footer > div#descripcion,
+footer > div#contacto,
+footer > div#enlaces {
+  display: none;
+}
+footer > div#copyright {
+  font-size: 1.2rem !important;
+  justify-self: center;
+  align-self: center;
+  display: inline-block;
+  width: 50%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+footer > div#copyright > p {
+  text-align: center;
+}
+footer > div#copyright > i {
+  margin-right: 1rem;
+  float: left;
+}
+@media (min-width: 768px) {
+  /**************/
+  /** HEADER ***/
+  /*************/
+  header {
+    grid-template-columns: 0.3fr 5fr 0.5fr;
+    grid-template-areas: 'icon menu redes';
+    position: absolute;
+  }
+  header > img[alt='Logo de MEGÓC'],
+  header > nav {
+    display: block;
+    align-self: center;
+  }
+  header > img[alt='Letras MEGÓC'],
+  main > section#cantantes_movil {
+    display: none;
+  }
+  header > img[alt='Logo de MEGÓC'] {
+    width: 3rem;
+    margin-left: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+    grid-area: icon;
+  }
+  header > nav {
+    display: flex;
+    align-items: center;
+    grid-area: menu;
+  }
+  header > nav a {
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    color: lightgray;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 0.13rem;
+    transition: background-size 0.3s;
+  }
+  header > nav a:hover,
+  header > nav a:focus {
+    background-size: 100% 2px;
+  }
+  header > div#menu_hamburguesa {
+    display: none;
+  }
+  header > div#redes_sociales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    grid-area: redes;
+  }
+  /********************/
+  /**** FIN HEADER ****/
+  /********************/
+  /*********************/
+  /**** REDES FRAME ****/
+  /*********************/
+  #backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+  }
+  #backdrop:hover {
+    cursor: pointer;
+  }
+  #red_social {
+    position: fixed;
+    z-index: 100;
+    border-radius: 0.63rem;
+    width: 80%;
+    height: 50%;
+    top: 20vh;
+    left: 10%;
+    display: none;
+  }
+  #red_social > iframe {
+    border: none;
+    overflow: hidden;
+    float: center;
+    width: 100%;
+    height: 80%;
+  }
+  div#red_social > div {
+    display: flex;
+    justify-content: center;
+  }
+  /*******************/
+  /**** FIN REDES ****/
+  /*******************/
+  section#principal {
+    z-index: 100%;
+  }
+  main > section#audiciones {
+    background-color: rgb(49, 47, 47, 0.3);
+    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
+    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 5rem 5rem 0 5rem;
+  }
+  main > section#cantantes_pc {
+    display: block;
+    overflow: auto;
+    margin: 5rem 5rem 5rem 5rem;
+    background-color: rgba(49, 47, 47, 0.3);
+    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
+    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
+    border-radius: 1rem;
+  }
+  main > section#cantantes_pc > div#slider {
+    display: flex;
+    overflow: auto;
+    padding: 1rem;
+  }
+  main > section#cantantes_pc > div#slider > div.card {
+    margin-right: 1rem;
+    position: relative;
+  }
+  main > section#cantantes_pc > div#slider > div.card > img {
+    width: auto;
+    object-fit: cover;
+    height: 18.75rem;
+    border-radius: 1rem;
+    border: 0.3rem solid #494747;
+    box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
+  }
+  /****************/
+  /**** FOOTER ****/
+  /****************/
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+  footer > div#descripcion,
+  footer > div#contacto,
+  footer > div#enlaces {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  footer > div#copyright {
+    display: none;
+  }
+  footer > div#contacto > ul {
+    margin-top: 0.5rem;
+  }
+  footer > div#descripcion > img {
+    width: 8rem;
+    align-self: center;
+    margin: 0 auto;
+  }
+  footer > div#descripcion > p {
+    width: 15rem;
+  }
+  footer > div#enlaces {
+    margin-left: 0.1rem;
+  }
+  footer > div#enlaces > a {
+    margin-left: 1rem;
+    color: lightgray;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 0.13rem;
+    transition: background-size 0.3s;
+    margin-left: 0;
+  }
+  footer > div#enlaces > a:hover,
+  footer > div#enlaces > a:focus {
+    background-size: 100% 2px;
+  }
+}
+
+@keyframes slidy {
+  0% {
+    left: 0%;
+  }
+  20% {
+    left: 0%;
+  }
+  25% {
+    left: -100%;
+  }
+  45% {
+    left: -100%;
+  }
+  50% {
+    left: -200%;
+  }
+  70% {
+    left: -200%;
+  }
+  75% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}

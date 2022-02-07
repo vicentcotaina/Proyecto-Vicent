@@ -1,0 +1,13 @@
+-const secciones={'Inicio':"index.html",'Próximos conciertos':"conciertos.html",'Galería':"galería.html",'¿Quiénes somos?':"quienessomos.html",'¿Te gusta cantar?':"cantar.html",'Contacta':"contacta.html"}
+header
+  img(src="./img/logo.png", alt="Logo de MEGÓC")
+  img(src="./img/marca2.png",alt="Letras MEGÓC")
+  nav
+    each val,key in secciones 
+      a(href=`./${val}`) #{key}
+  div#redes_sociales
+      i#facebook.fa-brands.fa-facebook-f
+      i#instagram.fa-brands.fa-instagram
+      i#youtube.fa-brands.fa-youtube
+  div#menu_hamburguesa
+      i.fa.fa-bars

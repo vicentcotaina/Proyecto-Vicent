@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEGÓC - Moder espai gospel roc</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/5ed688fb42.js" crossorigin="anonymous"> </script>
+    <script src="./js/index.js" defer></script>
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.compat.css" integrity="sha256-ru6hde/8yosp0lQGTaEV6kIpnngqTkn4P2qCQmZ46UM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script defer type="module">AOS.init()</script>
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <div id="red_social"></div>
+    <header><img src="./img/logo.png" alt="Logo de MEGÓC"><img src="./img/marca2.png" alt="Letras MEGÓC">
+      <nav><a href="./index.html">Inicio</a><a href="./conciertos.html">Próximos conciertos</a><a href="./galería.html">Galería</a><a href="./quienessomos.html">¿Quiénes somos?</a><a href="./cantar.html">¿Te gusta cantar?</a><a href="./contacta.html">Contacta</a>
+      </nav>
+      <div id="redes_sociales"><i class="fa-brands fa-facebook-f" id="facebook"></i><i class="fa-brands fa-instagram" id="instagram"></i><i class="fa-brands fa-youtube" id="youtube"></i></div>
+      <div id="menu_hamburguesa"><i class="fa fa-bars"></i></div>
+    </header>
+    <main>
+      <section id="maincarrusel">
+        <div id="slider">
+          <figure><img src="./img/foto.jpg" alt=""><img src="./img/foto2.jpg" alt=""><img src="./img/foto3.jpg" alt=""></figure>
+        </div>
+      </section>
+      <section id="audiciones">
+        <h2>Audiciones </h2>
+        <div><img src="./img/musicear.svg" alt="">
+          <div>
+            <h3>¿Quieres formar parte de nosotros?</h3>
+            <p>Agraïm el teu interés a formar part del nostre grup. Si desitges ser inclòs en futures audicions, fes clic en el següent botó, emplena el formulari i podràs ser seleccionat per a les poques places existents i per tant estaràs més prop de ser part de nosaltres.</p><br>
+            <button id="inscribir" href="./cantar.html"> Inscribete</button>
+          </div>
+        </div>
+      </section>
+      <section id="cantantes_pc">
+        <h2>Artistas interpretados</h2>
+        <div id="slider">
+          <div class="card"><img src="./img/queen.jpg" alt=""></div>
+          <div class="card"><img src="./img/can1.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can2.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can3.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can4.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can5.jpg" alt=""></div>
+          <div class="card"><img src="./img/can1.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can2.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can3.jpg" alt=""></div>
+          <div class="card"> <img src="./img/can4.jpg" alt=""></div>
+        </div>
+      </section><br>
+      <section id="cantantes_movil"> 
+        <h2>Artistas interpretados</h2>
+        <section id="slider"> 
+          <input id="s1" type="radio" name="slider">
+          <input id="s2" type="radio" name="slider">
+          <input id="s3" type="radio" name="slider" checked>
+          <input id="s4" type="radio" name="slider">
+          <input id="s5" type="radio" name="slider">
+          <label for="s1" id="slide1"><img src="./img/queen.jpg" alt="Imagen queen" heigth="100%" width="100%"></label>
+          <label for="s2" id="slide2"><img src="./img/can1.jpg" alt="Imagen queen" heigth="100%" width="100%"></label>
+          <label for="s3" id="slide3"><img src="./img/can2.jpg" alt="Imagen queen" heigth="100%" width="100%"></label>
+          <label for="s4" id="slide4"><img src="./img/can3.jpg" alt="Imagen queen" heigth="100%" width="100%"></label>
+          <label for="s5" id="slide5"><img src="./img/can4.jpg" alt="Imagen queen" heigth="100%" width="100%"></label>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <div id="copyright">
+        <p>2022 <i class="fa fa-copyright"></i></p>
+      </div>
+      <div id="descripcion"><img src="./img/marca2.png" alt="Logo y nombre MEGÓC">
+        <p>MEGÓC es un grupo de música formado por aficionados apasionados de la misma con un sello de identidad propio cimentado en la energía de la voz humana y en la originalidad de sus arreglos basados en la armonía vocal y el color característico de la música negra, el soul y el góspel.</p>
+      </div>
+      <div id="contacto"><b>Contacto </b><br>
+        <ul class="fa-ul"> 
+          <li><i class="fa-li fa fa-envelope"> </i>
+            <p>modernespaigospelcor@hotmail.com</p>
+          </li>
+          <li> <i class="fa-li fa fa-brands fa-facebook-f"> </i>
+            <p>Modern Espai Gospel Cor</p>
+          </li>
+          <li> <i class="fa-li fa fa-brands fa-instagram"> </i>
+            <p>@modernespaigospelcor</p>
+          </li>
+          <li> <i class="fa-li fa fa-brands fa-youtube"> </i>
+            <p>Modern Espai Gospel Cor</p>
+          </li>
+        </ul>
+      </div>
+      <div id="enlaces"><b>Enlaces </b><br><a href="./index.html">Inicio</a><br><a href="./conciertos.html">Próximos conciertos</a><br><a href="./galería.html">Galería</a><br><a href="./quienessomos.html">¿Quiénes somos?</a><br><a href="./cantar.html">¿Te gusta cantar?</a><br><a href="./contacta.html">Contacta</a><br>
+      </div>
+    </footer>
+  </body>
+</html>

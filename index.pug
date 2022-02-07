@@ -1,0 +1,66 @@
+doctype html
+html(lang='es')
+        include ./head.pug
+        body
+          div#backdrop
+          div#red_social
+          include ./headernav.pug
+          main
+            section#maincarrusel
+              #slider
+                figure
+                  img(src='./img/foto.jpg' alt='')
+                  img(src='./img/foto2.jpg' alt='')
+                  img(src='./img/foto3.jpg' alt='')
+            section#audiciones
+              h2 Audiciones 
+              div
+                img(src="./img/musicear.svg", alt="")
+                div
+                  h3 ¿Quieres formar parte de nosotros?
+                  p Agraïm el teu interés a formar part del nostre grup. Si desitges ser inclòs en futures audicions, fes clic en el següent botó, emplena el formulari i podràs ser seleccionat per a les poques places existents i per tant estaràs més prop de ser part de nosaltres.
+                  br
+                  button#inscribir(href="./cantar.html")  Inscribete
+            section#cantantes_pc
+              h2 Artistas interpretados
+              div#slider
+                .card
+                  img(src="./img/queen.jpg", alt="") 
+                .card
+                  img(src="./img/can1.jpg", alt="") 
+                .card 
+                  img(src="./img/can2.jpg", alt="")
+                .card 
+                  img(src="./img/can3.jpg", alt="")
+                .card 
+                  img(src="./img/can4.jpg", alt="")
+                .card 
+                  img(src="./img/can5.jpg", alt="")
+                .card
+                  img(src="./img/can1.jpg", alt="") 
+                .card 
+                  img(src="./img/can2.jpg", alt="")
+                .card 
+                  img(src="./img/can3.jpg", alt="")
+                .card 
+                  img(src="./img/can4.jpg", alt="")
+            br
+            section#cantantes_movil 
+              h2 Artistas interpretados
+              section#slider 
+                input#s1(type="radio", name="slider")
+                input#s2(type="radio", name="slider")
+                input#s3(type="radio", name="slider" checked)
+                input#s4(type="radio", name="slider")
+                input#s5(type="radio", name="slider")
+                label(for="s1" id="slide1")
+                  img(src="./img/queen.jpg", alt="Imagen queen" heigth="100%" width="100%")
+                label(for="s2" id="slide2")
+                  img(src="./img/can1.jpg", alt="Imagen queen" heigth="100%" width="100%")
+                label(for="s3" id="slide3")
+                  img(src="./img/can2.jpg", alt="Imagen queen" heigth="100%" width="100%")
+                label(for="s4" id="slide4")
+                  img(src="./img/can3.jpg", alt="Imagen queen" heigth="100%" width="100%")
+                label(for="s5" id="slide5")
+                  img(src="./img/can4.jpg", alt="Imagen queen" heigth="100%" width="100%") 
+          include ./footer.pug

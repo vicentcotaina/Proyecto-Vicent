@@ -1,0 +1,35 @@
+-const sections={'Inicio':"index.html",'Próximos conciertos':"conciertos.html",'Galería':"galería.html",'¿Quiénes somos?':"quienessomos.html",'¿Te gusta cantar?':"cantar.html",'Contacta':"contacta.html"}
+footer
+  div#copyright
+    
+    p 2022 
+      i.fa.fa-copyright
+  div#descripcion
+    img(src="./img/marca2.png", alt="Logo y nombre MEGÓC")
+    p MEGÓC es un grupo de música formado por aficionados apasionados de la misma con un sello de identidad propio cimentado en la energía de la voz humana y en la originalidad de sus arreglos basados en la armonía vocal y el color característico de la música negra, el soul y el góspel.
+  div#contacto
+    b Contacto 
+    br
+    ul.fa-ul 
+      li
+        i.fa-li.fa.fa-envelope 
+        p modernespaigospelcor@hotmail.com
+      li 
+        i.fa-li.fa.fa-brands.fa-facebook-f 
+        p Modern Espai Gospel Cor
+      li 
+        i.fa-li.fa.fa-brands.fa-instagram 
+        p @modernespaigospelcor
+      li 
+        i.fa-li.fa.fa-brands.fa-youtube 
+        p Modern Espai Gospel Cor
+  div#enlaces
+    b Enlaces 
+    br
+    each val,key in sections 
+      a(href=`./${val}`) #{key}
+      br
+      
+      
+       
+     

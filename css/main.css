@@ -44,7 +44,12 @@ b {
   background: #494747;
   border-radius: 10px;
 }
-/**************/
+.boxshadow {
+  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+  -moz-box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+}
+/*************/
 /** HEADER ***/
 /*************/
 header {
@@ -63,9 +68,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: '... icon menu';
-  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
-  -moz-box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
-  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
 }
 header > img[alt='Logo de MEGÓC'],
 header > nav {
@@ -121,7 +123,7 @@ main > section#audiciones > div {
   grid-template-areas: 'icon text';
   margin-bottom: 3rem;
 }
-#inscribir {
+.button {
   display: inline-block;
   padding: 0.5em 1.7em;
   margin: 0 0.1em 0.1em 0;
@@ -129,7 +131,6 @@ main > section#audiciones > div {
   border-radius: 2em;
   box-sizing: border-box;
   text-decoration: none;
-  font-size: 1rem;
   font-family: 'Geomanist', sans-serif;
   font-weight: 300;
   color: white;
@@ -141,7 +142,7 @@ main > section#audiciones > div {
   transition: all 0.2s;
   background: none;
 }
-#inscribir:hover {
+.button:hover {
   color: black;
   background-color: rgb(255, 255, 255);
   text-decoration: underline;
@@ -149,9 +150,6 @@ main > section#audiciones > div {
 }
 div#slider {
   overflow: hidden;
-  box-shadow: 0px 17px 23px 3px rgba(0, 0, 0, 0.67);
-  -moz-box-shadow: 0px 17px 23px 3px rgba(0, 0, 0, 0.67);
-  box-shadow: 0px 17px 23px 3px rgba(0, 0, 0, 0.67);
 }
 div#slider figure img {
   width: 20%;
@@ -252,7 +250,197 @@ main > section#cantantes_movil > section#slider label {
   box-shadow: 0 0.05rem 0.25rem 0 rgba(0, 0, 0, 0.37);
   transform: translate3d(30%, 0, -12.5rem);
 }
-
+/*****************/
+/** FORMULARIO ***/
+/*****************/
+form.formulariocontacto,
+form.formulariounir {
+  width: 80%;
+  margin: 0 auto 5rem auto;
+}
+form.formulariocontacto > fieldset {
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    ' nm nm '
+    ' ap ap '
+    ' tf tf '
+    ' ce ce '
+    ' cm cm '
+    ' btn btn';
+}
+form.formulariounir > fieldset {
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    ' fo fo '
+    ' nm nm '
+    ' ap ap '
+    ' sx sx '
+    ' ed ed '
+    ' nc nc '
+    ' tf tf '
+    ' ce ce '
+    ' ins ins '
+    ' cm cm '
+    ' btn btn';
+}
+form.formulariocontacto > fieldset > legend,
+form.formulariounir > fieldset > legend {
+  text-align: center;
+}
+form.formulariocontacto > fieldset > span > input,
+form.formulariocontacto > fieldset > span > textarea,
+form.formulariounir > fieldset > span:not(#inputsexo):not(#inputfoto) > input,
+form.formulariounir > fieldset > span > textarea {
+  background: rgba(0, 0, 0, 0.2);
+  color: lightgray;
+  font-family: 'Baloo 2', cursive;
+  display: block;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 10px;
+  border-width: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+form.formulariocontacto > fieldset > input:focus,
+form.formulariocontacto > fieldset > textarea:focus,
+form.formulariounir
+  > fieldset
+  > span:not(#inputsexo):not(#inputfoto)
+  > input:focus,
+form.formulariounir > fieldset > textarea:focus {
+  background-color: rgba(211, 211, 211, 0.2);
+}
+form.formulariocontacto > fieldset > span#inputnombre,
+form.formulariounir > fieldset > span#inputnombre {
+  grid-area: nm;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariocontacto > fieldset > span#inputnombre > input,
+form.formulariounir > fieldset > span#inputnombre > input {
+  width: 100%;
+}
+form.formulariocontacto > fieldset > span#inputapellidos,
+form.formulariounir > fieldset > span#inputapellidos {
+  grid-area: ap;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariocontacto > fieldset > span#inputapellidos > input,
+form.formulariounir > fieldset > span#inputapellidos > input {
+  width: 100%;
+}
+form.formulariocontacto > fieldset > span#inputtelefono,
+form.formulariounir > fieldset > span#inputtelefono {
+  grid-area: tf;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariocontacto > fieldset > span#inputtelefono > input,
+form.formulariounir > fieldset > span#inputtelefono > input {
+  width: 100%;
+}
+form.formulariocontacto > fieldset > span#inputcorreo,
+form.formulariounir > fieldset > span#inputcorreo {
+  grid-area: ce;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariocontacto > fieldset > span#inputcorreo > input,
+form.formulariounir > fieldset > span#inputcorreo > input {
+  width: 100%;
+}
+form.formulariocontacto > fieldset > span#textareamensaje,
+form.formulariounir > fieldset > span#textareamensaje {
+  grid-area: cm;
+  margin: 0 auto 1rem auto;
+  width: 90%;
+}
+form.formulariocontacto > fieldset > span#textareamensaje > textarea,
+form.formulariounir > fieldset > span#textareamensaje > textarea {
+  width: 100%;
+}
+form.formulariocontacto > fieldset > span#buttons,
+form.formulariounir > fieldset > span#buttons {
+  grid-area: btn;
+  margin: 0 auto;
+}
+form.formulariocontacto > fieldset > span#buttons > button[type='submit'],
+form.formulariounir > fieldset > span#buttons > button[type='submit'] {
+  margin-right: 0.5rem;
+}
+form.formulariocontacto > fieldset > span#buttons > button[type='reset'],
+form.formulariounir > fieldset > span#buttons > button[type='reset'] {
+  margin-left: 0.5rem;
+}
+form.formulariounir > fieldset > span#inputfoto {
+  grid-area: fo;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariounir > fieldset > span#inputfoto > input#foto {
+  color: transparent;
+}
+form.formulariounir
+  > fieldset
+  > span#inputfoto
+  > input#foto::-webkit-file-upload-button {
+  visibility: hidden;
+}
+form.formulariounir > fieldset > span#inputfoto > input#foto::before {
+  content: 'Pujar foto';
+  display: inline-block;
+  border: 0.16em solid rgb(255, 255, 255);
+  border-radius: 2em;
+  margin: 0.5rem 0 0.5rem 0;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-size: 10pt;
+  font-family: 'Geomanist', sans-serif;
+  font-weight: 300;
+  color: white;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+}
+form.formulariounir > fieldset > span#inputsexo {
+  grid-area: sx;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariounir > fieldset > span#inputedad {
+  grid-area: ed;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariounir > fieldset > span#inputnacionalidad {
+  grid-area: nc;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariounir > fieldset > span#inputnacionalidad > input {
+  width: 100%;
+}
+form.formulariounir > fieldset > span#inputinstrumento {
+  grid-area: ins;
+  margin: 0 auto;
+  width: 90%;
+}
+form.formulariounir > fieldset > span#inputinstrumento > input {
+  width: 100%;
+}
+/*************/
+/** FOOTER ***/
+/*************/
 footer {
   grid-area: ft;
   bottom: 0;
@@ -265,9 +453,6 @@ footer {
   );
   display: grid;
   position: fixed;
-  box-shadow: 7px -8px 16px 3px rgba(0, 0, 0, 0.67);
-  -moz-box-shadow: 7px -8px 16px 3px rgba(0, 0, 0, 0.67);
-  box-shadow: 7px -8px 16px 3px rgba(0, 0, 0, 0.67);
 }
 footer > div#descripcion,
 footer > div#contacto,
@@ -375,6 +560,13 @@ footer > div#copyright > i {
     top: 20vh;
     left: 10%;
     display: none;
+    font-size: 2rem;
+  }
+  #red_social > p {
+    text-align: center;
+  }
+  #red_social > p > i {
+    position: relative;
   }
   #red_social > iframe {
     border: none;
@@ -395,9 +587,6 @@ footer > div#copyright > i {
   }
   main > section#audiciones {
     background-color: rgb(49, 47, 47, 0.3);
-    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
-    -moz-box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
-    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
     border-radius: 1rem;
     padding: 2rem;
     margin: 5rem 5rem 0 5rem;
@@ -407,9 +596,6 @@ footer > div#copyright > i {
     overflow: auto;
     margin: 5rem 5rem 5rem 5rem;
     background-color: rgba(49, 47, 47, 0.3);
-    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
-    -moz-box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
-    box-shadow: 7px -4px 29px 3px rgba(0, 0, 0, 0.67);
     border-radius: 1rem;
   }
   main > section#cantantes_pc > div#slider {
@@ -430,6 +616,35 @@ footer > div#copyright > i {
     box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
+  }
+  /*****************/
+  /** FORMULARIO ***/
+  /*****************/
+  form.formulariocontacto,
+  form.formulariounir {
+    margin: 7rem auto 5rem auto;
+  }
+  form.formulariocontacto > fieldset {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      ' nm nm ap ap'
+      ' tf tf ce ce'
+      ' cm cm cm cm'
+      ' btn btn btn btn';
+  }
+  form.formulariocontacto > fieldset > span#textareamensaje,
+  form.formulariounir > fieldset > span#textareamensaje {
+    width: 95%;
+  }
+  form.formulariounir > fieldset {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      ' fo sx sx'
+      ' nm ap ap'
+      ' ed nc nc'
+      ' tf ce ce '
+      ' ins cm cm'
+      ' btn btn btn';
   }
   /****************/
   /**** FOOTER ****/

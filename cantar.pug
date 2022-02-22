@@ -1,0 +1,62 @@
+doctype html
+html(lang='es')
+        include ./head.pug
+        body
+          div#backdrop
+          div#red_social
+          include ./headernav.pug
+          main
+            form.formulariounir(name='datos' method='GET' action='mailto:cotainavicent@gmaill.com' enctype='multipart/form-data' autocomplete='on')
+                fieldset.boxshadow
+                    legend 
+                      h1 ÚNETE
+                    span#inputfoto 
+                        label(for='foto') Fotografía * 
+                        br
+                        input#foto(type='file' name='foto' required='') 
+                    span#inputnombre
+                        label(for='nombre') Nombre *
+                        br
+                        input#nombre(type='text' name='nombre' maxlength='40' required='' autofocus='' placeholder='e.g. Vicent' pattern='^[A-Za-z]{0,40}$')
+                    span#inputapellidos
+                        label(for='apellidos') Apellidos *
+                        br
+                        input#apellidos(type='text' name='apellidos' maxlength='60' required='' placeholder='e.g. Cotaina Bertó' pattern='^[A-Za-z\\]{0,60}$')
+                    span#inputsexo Sexo
+                      br
+                      input#hombre(type='radio' name='sexo' checked='')
+                      label(for='hombre') Hombre
+                      input#mujer(type='radio' name='sexo')
+                      label(for='mujer') Mujer
+                    span#inputedad
+                        label(for='edad') Edad
+                        input#edad(type='number' name='edad' min='16' max='99' placeholder='e.g. 19')
+                    span#inputnacionalidad
+                        label(for='nacionalidad') Nacionalidad
+                        br 
+                        input#nacionalidad(type="text" name='nacionalidad' maxlength='40' placeholder='e.g. Española')
+                    span#inputtelefono
+                        label(for="tel") Número de teléfono *
+                        br 
+                        input#tel(type="tel" name='tel' required='' placeholder='e.g. 601-11-88-59' pattern='^[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}$')
+                    span#inputcorreo 
+                        label(for='email') Correo electronico *
+                        br 
+                        input#email(type='email' name='email' required='' placeholder='e.g. cotainavicent@gmail.com' pattern='^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$') 
+                    span#inputinstrumento 
+                        label(for="instrumento") Conocimiento instrumental
+                        br
+                        input#instrumento(type="text" list="instrumentos" name="instrumento")
+                        datalist(id='instrumentos')
+                          option(value='Piano')
+                          option(value='Guitarra')
+                          option(value='Batería')
+                    span#textareamensaje 
+                        label(for="experiencia") Experiència y nocions musicals *
+                        br
+                        textarea#men(name="experiencia", cols="30", rows="10" required='') Escriu ací la teua experiència i les teues nocions musicals
+                    span#buttons
+                        button.button(type='submit') Enviar
+                        button.button(type='reset') Borrar
+                    br
+          include ./footer.pug

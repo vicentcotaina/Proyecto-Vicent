@@ -7,12 +7,12 @@ html(lang='es')
           include ./headernav.pug
           main
             section#maincarrusel
-              #slider
+              #slider.boxshadow
                 figure
                   img(src='./img/foto.jpg' alt='')
                   img(src='./img/foto2.jpg' alt='')
                   img(src='./img/foto3.jpg' alt='')
-            section#audiciones
+            section#audiciones.boxshadow
               h2 Audiciones 
               div
                 img(src="./img/musicear.svg", alt="")
@@ -20,8 +20,8 @@ html(lang='es')
                   h3 ¿Quieres formar parte de nosotros?
                   p Agraïm el teu interés a formar part del nostre grup. Si desitges ser inclòs en futures audicions, fes clic en el següent botó, emplena el formulari i podràs ser seleccionat per a les poques places existents i per tant estaràs més prop de ser part de nosaltres.
                   br
-                  button#inscribir(href="./cantar.html")  Inscribete
-            section#cantantes_pc
+                  button.button(href="./cantar.html")  Inscribete
+            section#cantantes_pc.boxshadow
               h2 Artistas interpretados
               div#slider
                 .card

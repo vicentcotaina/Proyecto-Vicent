@@ -4,6 +4,23 @@ let instagram = document.getElementById('instagram');
 let youtube = document.getElementById('youtube');
 let backdrop = document.getElementById('backdrop');
 let box = document.getElementById('red_social');
+let burguerMenu = document.getElementById('menu_hamburguesa');
+burguerMenu.addEventListener('click', () => {
+  backdrop.style.display = 'block';
+  backdrop.style.pointerEvents = 'all';
+  Swal.fire({
+    html: `<div id="hamburguerMenu"><a class="button" href="index.html">Inici</a><a class="button" href="./conciertos.html">Pròxims concerts</a><a class="button" href="./galería.html">Galeria</a><a class="button" href="./quienessomos.html">Qui som?</a><a class="button" href="./cantar.html">T'agrada cantar?</a><a class="button" href="./contacta.html">Contacta</a></div>`,
+    background:
+      'linear-gradient(180deg,rgba(0, 0, 0, 0.85) 0%,rgba(73, 72, 72, 0.85) 100%)',
+    position: 'top-end',
+    grow: 'column',
+    width: 300,
+    showConfirmButton: false,
+    showCloseButton: true,
+  }).then(() => {
+    backdrop.style.display = 'none';
+  });
+});
 facebook.addEventListener('click', () => {
   backdrop.style.display = 'block';
   box.style.display = 'block';

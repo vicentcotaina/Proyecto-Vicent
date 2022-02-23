@@ -1,9 +1,9 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Bebas+Neue&family=Caveat&display=swap');
 @font-face {
   font-family: 'Geomanist';
   src: url('../ttf/Geomanist-Black.ttf');
 }
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Bebas+Neue&family=Caveat&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -43,11 +43,6 @@ b {
 ::-webkit-scrollbar-thumb:vertical {
   background: #494747;
   border-radius: 10px;
-}
-.boxshadow {
-  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
-  -moz-box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
-  box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
 }
 /*************/
 /** HEADER ***/
@@ -118,9 +113,6 @@ main > section#audiciones {
   margin-right: 5rem;
 }
 main > section#audiciones > div {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-areas: 'icon text';
   margin-bottom: 3rem;
 }
 .button {
@@ -137,7 +129,6 @@ main > section#audiciones > div {
   text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
   box-shadow: 7px 7px 28px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 7px 7px 28px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 7px 7px 28px 0px rgba(0, 0, 0, 0.75);
   text-align: center;
   transition: all 0.2s;
   background: none;
@@ -167,17 +158,18 @@ div#slider figure {
   animation: 30s slidy infinite;
 }
 main > section#audiciones > div > img {
-  grid-area: icon;
   align-self: center;
   justify-self: flex-end;
   width: 100%;
   max-width: 18rem;
   margin-right: 2rem;
 }
+main > section#audiciones > div > div > *:not(a.button) {
+  display: none;
+}
 main > section#audiciones > div > div {
-  padding-top: 3rem;
-  grid-area: text;
-  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
 }
 main > section#cantantes_pc {
   display: none;
@@ -194,6 +186,7 @@ main > section#cantantes_movil > section#slider {
   position: relative;
   perspective: 62.5rem;
   transform-style: preserve-3d;
+  width: 100%;
 }
 main > section#cantantes_movil > section#slider label {
   margin: auto;
@@ -249,6 +242,79 @@ main > section#cantantes_movil > section#slider label {
 #s5:checked ~ #slide2 {
   box-shadow: 0 0.05rem 0.25rem 0 rgba(0, 0, 0, 0.37);
   transform: translate3d(30%, 0, -12.5rem);
+}
+/********************/
+/** QUIENES SOMOS ***/
+/********************/
+section#origen,
+section#miembros {
+  margin: 0rem 5rem 0rem 5rem;
+}
+section#origen > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'foto'
+    'texto';
+}
+section#origen > div > img {
+  grid-area: foto;
+  max-width: 16rem;
+  margin: 0 auto 1rem auto;
+}
+section#origen > div > div,
+section#director > div > div {
+  grid-area: texto;
+}
+section#origen > div > div > p,
+section#director > div > div > p {
+  text-align: justify;
+}
+section#director {
+  margin: 0rem 5rem 0rem 5rem;
+}
+section#director > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'texto'
+    'foto';
+}
+section#director > div > img {
+  grid-area: foto;
+  max-width: 16rem;
+  margin: 0 auto;
+}
+section#miembros > div > img {
+  max-width: 16rem;
+  margin: 0 auto 5rem auto;
+}
+section#galeria {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+section#galeria > article {
+  display: grid;
+  justify-content: center;
+  margin: 0 0.5rem 5rem 0.5rem;
+  grid-template-areas:
+    'name'
+    'iframe';
+}
+section#galeria > article > p {
+  grid-area: name;
+  text-align: center;
+  font-family: 'Geomanist';
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+section#galeria > article > iframe {
+  grid-area: iframe;
+  width: max-content;
+  min-height: 15rem;
+  border-radius: 1rem;
 }
 /*****************/
 /** FORMULARIO ***/
@@ -476,6 +542,14 @@ footer > div#copyright > i {
   float: left;
 }
 @media (min-width: 768px) {
+  .box {
+    background-color: rgba(49, 47, 47, 0.3);
+    border-radius: 1rem;
+  }
+  .boxshadow {
+    box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: 0px 8px 16px 3px rgba(0, 0, 0, 0.67);
+  }
   /**************/
   /** HEADER ***/
   /*************/
@@ -586,8 +660,6 @@ footer > div#copyright > i {
     z-index: 100%;
   }
   main > section#audiciones {
-    background-color: rgb(49, 47, 47, 0.3);
-    border-radius: 1rem;
     padding: 2rem;
     margin: 5rem 5rem 0 5rem;
   }
@@ -595,8 +667,6 @@ footer > div#copyright > i {
     display: block;
     overflow: auto;
     margin: 5rem 5rem 5rem 5rem;
-    background-color: rgba(49, 47, 47, 0.3);
-    border-radius: 1rem;
   }
   main > section#cantantes_pc > div#slider {
     display: flex;
@@ -615,7 +685,89 @@ footer > div#copyright > i {
     border: 0.3rem solid #494747;
     box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 8px 8px 28px 0px rgba(0, 0, 0, 0.75);
+  }
+  /*****************/
+  /**** INICIO *****/
+  /*****************/
+  main > section#audiciones > div {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: 'icon text';
+  }
+  main > section#audiciones > div > img {
+    grid-area: icon;
+  }
+  main > section#audiciones > div > div {
+    display: block;
+    padding-top: 3rem;
+    grid-area: text;
+    margin-right: 2rem;
+  }
+  main > section#audiciones > div > div > *:not(a.button) {
+    display: block;
+  }
+  /*****************/
+  /* QUIENES SOMOS */
+  /*****************/
+  section#origen {
+    margin: 7rem 5rem 0rem 5rem;
+    padding: 2rem;
+  }
+  section#origen > div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'foto texto';
+    margin-bottom: 3rem;
+  }
+  section#origen > div > img {
+    align-self: center;
+    justify-self: flex-end;
+    width: 100%;
+    max-width: 22rem;
+    margin-right: 2rem;
+  }
+  section#origen > div > div > p,
+  section#director > div > div > p {
+    text-align: left;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  section#director {
+    margin: 5rem 5rem 0rem 5rem;
+    padding: 2rem;
+  }
+  section#director > div {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'texto foto';
+    margin-bottom: 3rem;
+  }
+  section#director > div > img {
+    width: 100%;
+    max-width: 23rem;
+    margin-right: 2rem;
+  }
+  section#miembros {
+    margin: 5rem 5rem 5rem 5rem;
+    padding: 2rem;
+  }
+  section#miembros > div {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  section#miembros > div > img {
+    max-width: 50rem;
+    border-radius: 1rem;
+  }
+  section#galeria {
+    margin-top: 7rem;
+  }
+  section#galeria > article {
+    grid-template-areas:
+      'iframe'
+      'name';
+  }
+  section#galeria > article > p {
+    margin-top: 1rem;
   }
   /*****************/
   /** FORMULARIO ***/

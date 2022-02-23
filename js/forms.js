@@ -1,5 +1,5 @@
 'use strict';
-if (document.forms != null) {
+if (document.forms[0]) {
   const form = document.querySelector('form');
   const resetButton = document.querySelector(
     "form > fieldset > span#buttons > button[type='reset']"
@@ -15,17 +15,18 @@ if (document.forms != null) {
     );
     setTimeout(() => {
       box.innerHTML = '';
-      backdrop.style.display = 'none';
-      box.style.display = 'none';
       swal('Èxit', 'Formulari enviat correctament', 'success', {
         button: 'OK',
+      }).then(() => {
+        backdrop.style.display = 'none';
+        box.style.display = 'none';
       });
     }, 500);
   });
   resetButton.addEventListener('click', (event) => {
     event.preventDefault();
-    backdrop.style.display = 'none';
-    box.style.display = 'none';
+    backdrop.style.display = 'block';
+    backdrop.style.pointerEvents = 'all';
     swal({
       title: 'Estàs segur?',
       text: 'Una vegada reinicies el formulari perdràs les dades introduïdes',
@@ -37,9 +38,15 @@ if (document.forms != null) {
         form.reset();
         swal('Formulari reiniciat', {
           icon: 'success',
+        }).then(() => {
+          backdrop.style.display = 'none';
+          box.style.display = 'none';
         });
       } else {
-        swal('El teu formulari està intacte');
+        swal('El teu formulari està intacte').then(() => {
+          backdrop.style.display = 'none';
+          box.style.display = 'none';
+        });
       }
     });
   });

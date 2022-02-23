@@ -1,4 +1,4 @@
--const sections={'Inicio':"index.html",'Próximos conciertos':"conciertos.html",'Galería':"galería.html",'¿Quiénes somos?':"quienessomos.html",'¿Te gusta cantar?':"cantar.html",'Contacta':"contacta.html"}
+-const sections={'Inici':"index.html",'Pròxims concerts':"conciertos.html",'Galeria':"galería.html",'Qui som?':"quienessomos.html","T'agrada cantar?":"cantar.html",'Contacta':"contacta.html"}
 footer.boxshadow
   div#copyright
     
@@ -6,9 +6,9 @@ footer.boxshadow
       i.fa.fa-copyright
   div#descripcion
     img(src="./img/marca2.png", alt="Logo y nombre MEGÓC")
-    p MEGÓC es un grupo de música formado por aficionados apasionados de la misma con un sello de identidad propio cimentado en la energía de la voz humana y en la originalidad de sus arreglos basados en la armonía vocal y el color característico de la música negra, el soul y el góspel.
+    p MEGÓC és un grup de música format per aficionats apassionats de la mateixa amb un segell d'identitat propi consolidat en l'energia de la veu humana i en l'originalitat dels seus arranjaments basats en l'harmonia vocal i el color característic de la música negra, el soul i el góspel.
   div#contacto
-    b Contacto 
+    b Contacte 
     br
     ul.fa-ul 
       li
@@ -24,7 +24,7 @@ footer.boxshadow
         i.fa-li.fa.fa-brands.fa-youtube 
         p Modern Espai Gospel Cor
   div#enlaces
-    b Enlaces 
+    b Enllaços 
     br
     each val,key in sections 
       a(href=`./${val}`) #{key}
